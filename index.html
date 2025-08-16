@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rona Events & Catering Services - Premium Catering Anywhere</title>
+    <meta name="description" content="Professional catering services for all events with international shipping options. Quality food delivered worldwide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles & Variables */
+        :root {
+            --primary-blue: #2a5bd7;
+            --primary-purple: #6a3dc8;
+            --primary-yellow: #f5a623;
+            --gradient: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 50%, var(--primary-yellow) 100%);
+            --gradient-reverse: linear-gradient(135deg, var(--primary-yellow) 0%, var(--primary-purple) 50%, var(--primary-blue) 100%);
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+            --black: #000000;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        .btn-instagram {
+            background: #E1306C;
+            color: var(--white);
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .btn-instagram:hover {
+            background: #C13584;
+            transform: translateY(-3px);
+        }
+
+        .btn-service {
+            background: var(--primary-purple);
+            color: var(--white);
+            padding: 8px 15px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-text {
+            color: var(--primary-purple);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .hamburger {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--dark);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: var(--dark);
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .hamburger::before {
+            top: -8px;
+        }
+
+        .hamburger::after {
+            top: 8px;
+        }
+
+        .nav-toggle.active .hamburger {
+            background: transparent;
+        }
+
+        .nav-toggle.active .hamburger::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .nav-toggle.active .hamburger::after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-list li {
+            margin-left: 30px;
+        }
+
+        .nav-list a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        .nav-list a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(42, 91, 215, 0.7) 0%, rgba(106, 61, 200, 0.7) 50%, rgba(245, 166, 35, 0.5) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Order Options Modal */
+        .order-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .order-modal-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .order-modal h3 {
+            margin-bottom: 20px;
+            color: var(--primary-purple);
+        }
+
+        .order-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .close-order-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .ceo-card {
+            flex: 1;
+            min-width: 300px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .ceo-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 5px solid var(--light-gray);
+        }
+
+        .ceo-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ceo-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: var(--primary-purple);
+        }
+
+        .ceo-title {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .ceo-info blockquote {
+            font-style: italic;
+            color: var(--dark);
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .ceo-info blockquote::before,
+        .ceo-info blockquote::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary-yellow);
+            opacity: 0.5;
+            position: absolute;
+        }
+
+        .ceo-info blockquote::before {
+            top: -15px;
+            left: -5px;
+        }
+
+        .ceo-info blockquote::after {
+            bottom: -30px;
+            right: -5px;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 60px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            padding: 20px 20px 10px;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+        }
+
+        .service-card p {
+            padding: 0 20px 20px;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .service-order-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+        }
+
+        /* Shipping Feature Section */
+        .shipping-feature {
+            background: var(--gradient);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shipping-feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+        }
+
+        .shipping-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+        }
+
+        .shipping-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .shipping-text h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        .shipping-text p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .shipping-benefits {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .shipping-benefits li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .shipping-benefits i {
+            margin-right: 10px;
+            color: var(--primary-yellow);
+            font-size: 1.2rem;
+        }
+
+        .shipping-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .shipping-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            cursor: pointer;
+            aspect-ratio: 1 / 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(42, 91, 215, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay i {
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: var(--white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-lightbox:hover {
+            color: var(--primary-yellow);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: var(--white);
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background: var(--light);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-purple);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+
+        .whatsapp-buttons {
+            margin: 30px 0;
+        }
+
+        .whatsapp-buttons h4 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links h4 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-purple);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-reverse);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            padding: 0 15px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--white);
+        }
+
+        .footer-col p,
+        .footer-col li {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .footer-col a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            opacity: 0.9;
+        }
+
+        .footer-col a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col i {
+            margin-right: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-legal {
+            margin-top: 15px;
+        }
+
+        .footer-legal a {
+            color: var(--white);
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-legal a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .nav-list {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-list.active {
+                transform: translateY(0);
+            }
+            
+            .nav-list li {
+                margin: 15px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-text {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .about-content,
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .shipping-content {
+                flex-direction: column-reverse;
+            }
+            
+            .shipping-text,
+            .shipping-image {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .contact-info {
+                padding: 30px 20px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="https://i.ibb.co/0jzvXhj9/b7c0446f2fbd4d9d9bb078d1a551833d-removebg-preview.png" alt="Rona Events & Catering Logo" width="50">
+                <span class="logo-text">Rona Events</span>
+            </a>
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#shipping">Ship Food Abroad</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Order Options Modal -->
+    <div class="order-modal" id="orderModal">
+        <div class="order-modal-content">
+            <span class="close-order-modal">&times;</span>
+            <h3>How would you like to order?</h3>
+            <div class="order-options">
+                <a href="https://wa.me/2348051929399?text=Hi%20Rona%20Events,%20I%20would%20like%20to%20place%20an%20order" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                </a>
+                <a href="https://instagram.com/ronacatering" class="btn btn-instagram">
+                    <i class="fab fa-instagram"></i> Order via Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Bringing Taste to Life – Anywhere in the World</h1>
+                <p class="hero-text">Premium catering services for weddings, corporate events, and private gatherings. We also ship authentic Nigerian meals worldwide.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary" id="orderNowBtn">Order Now</a>
+                    <a href="https://instagram.com/ronacatering" class="btn btn-secondary">Ship Food Abroad</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Rona Events & Catering</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Rona Events & Catering has been providing exceptional indoor and outdoor catering services for over a decade. We specialize in bringing authentic, delicious cuisine to events of all sizes, from intimate gatherings to large celebrations.</p>
+                    <p>Our team of professional chefs and event coordinators ensure every detail is perfect, from menu planning to flawless execution.</p>
+                </div>
+                <div class="ceo-card">
+                    <div class="ceo-image">
+                        <img src="https://i.ibb.co/mVFpZyp5/1755339601029.jpg" alt="CEO of Rona Events & Catering" class="ceo-photo">
+                    </div>
+                    <div class="ceo-info">
+                        <h3>Awosika Ibironke</h3>
+                        <p class="ceo-title">CEO & Founder</p>
+                        <blockquote>"At Rona Events, we believe food is more than sustenance - it's an experience that brings people together. Our commitment is to deliver not just meals, but memorable culinary moments with the highest quality ingredients and service."</blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Our Catering Services</h2>
+            <p class="section-subtitle">Premium catering solutions for all occasions</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.ibb.co/qMBXpPj8/images-12-28.jpg" alt="Small Chops catering service">
+                    </div>
+                    <h3>Small Chops</h3>
+                    <p>Delicious bite-sized Nigerian appetizers perfect for any gathering or event.</p>
+                    <div class="service-order-btn">
+                        <a href="https://wa.me/2348051929399?text=Hi%20Rona%20Events,%20I%20would%20like%20to%20order%20your%20Small%20Chops%20service" class="btn btn-service">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.ibb.co/GQNskLqc/images-12-24.jpg" alt="Asun catering service">
+                    </div>
+                    <h3>Asun</h3>
+                    <p>Spicy grilled goat meat, a Nigerian delicacy that's always a crowd favorite.</p>
+                    <div class="service-order-btn">
+                        <a href="https://wa.me/2348051929399?text=Hi%20Rona%20Events,%20I%20would%20like%20to%20order%20your%20Asun%20service" class="btn btn-service">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.ibb.co/chsm2ss9/images-12-27.jpg" alt="Grills catering service">
+                    </div>
+                    <h3>Grills</h3>
+                    <p>Perfectly grilled meats and fish with our signature marinades and spices.</p>
+                    <div class="service-order-btn">
+                        <a href="https://wa.me/2348051929399?text=Hi%20Rona%20Events,%20I%20would%20like%20to%20order%20your%20Grills%20service" class="btn btn-service">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.ibb.co/tMg03Q4C/images-12-29.jpg" alt="Jollof Rice catering service">
+                    </div>
+                    <h3>Jollof Rice</h3>
+                    <p>Iconic Nigerian Jollof rice, bursting with flavors from tomatoes, peppers, and spices.</p>
+                    <div class="service-order-btn">
+                        <a href="https://wa.me/2348051929399?text=Hi%20Rona%20Events,%20I%20would%20like%20to%20order%20your%20Jollof%20Rice%20service" class="btn btn-service">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.ibb.co/TMywRms0/images-35.jpg" alt="Fresh Snails catering service">
+                    </div>
+                    <h3>Fresh Snails</h3>
+                    <p>Fresh, succulent snails cooked in a rich pepper sauce, a true Nigerian delicacy.</p>
+                    <div class="service-order-btn">
+                        <a href="https://wa.me/2348051929399?text=Hi%20Rona%20Events,%20I%20would%20like%20to%20order%20your%20Fresh%20Snails%20service" class="btn btn-service">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.ibb.co/S49Mth7v/images-37.jpg" alt="Amala on the go catering service">
+                    </div>
+                    <h3>Amala on the Go</h3>
+                    <p>Traditional Yoruba amala served with our signature soups and stews.</p>
+                    <div class="service-order-btn">
+                        <a href="https://wa.me/2348051929399?text=Hi%20Rona%20Events,%20I%20would%20like%20to%20order%20your%20Amala%20on%20the%20Go%20service" class="btn btn-service">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 7 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.ibb.co/qFX3NvBD/images-12-25.jpg" alt="Ewa Aganyin Sauce catering service">
+                    </div>
+                    <h3>Ewa Aganyin Sauce</h3>
+                    <p>Authentic beans pudding with our special pepper sauce that keeps customers coming back.</p>
+                    <div class="service-order-btn">
+                        <a href="https://wa.me/2348051929399?text=Hi%20Rona%20Events,%20I%20would%20like%20to%20order%20your%20Ewa%20Aganyin%20Sauce%20service" class="btn btn-service">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 8 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://i.ibb.co/pT437X8/images-12-26.jpg" alt="Pepper Soup Special catering service">
+                    </div>
+                    <h3>Pepper Soup Special</h3>
+                    <p>Hearty, spicy Nigerian pepper soup made with fresh ingredients and traditional recipes.</p>
+                    <div class="service-order-btn">
+                        <a href="https://wa.me/2348051929399?text=Hi%20Rona%20Events,%20I%20would%20like%20to%20order%20your%20Pepper%20Soup%20Special%20service" class="btn btn-service">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Feature: Ship Food Abroad -->
+    <section id="shipping" class="section shipping-feature">
+        <div class="container">
+            <div class="shipping-content">
+                <div class="shipping-text">
+                    <h2 class="section-title">Ship Nigerian Food Anywhere in the World</h2>
+                    <p>Missing the taste of home? We specialize in safely packaging and shipping authentic Nigerian meals worldwide. Our special packaging ensures your food arrives fresh and delicious.</p>
+                    <ul class="shipping-benefits">
+                        <li><i class="fas fa-check-circle"></i> International shipping to over 50 countries</li>
+                        <li><i class="fas fa-check-circle"></i> Special temperature-controlled packaging</li>
+                        <li><i class="fas fa-check-circle"></i> Fast delivery options available</li>
+                        <li><i class="fas fa-check-circle"></i> Customs clearance assistance</li>
+                    </ul>
+                    <a href="https://instagram.com/ronacatering" class="btn btn-primary">Get a Quote</a>
+                </div>
+                <div class="shipping-image">
+                    <img src="https://i.ibb.co/0jzvXhj9/b7c0446f2fbd4d9d9bb078d1a551833d-removebg-preview.png" alt="International food shipping service">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <p class="section-subtitle">A taste of our delicious creations and events</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/fYDCwMk9/images-12-30.jpg" data-large="https://i.ibb.co/fYDCwMk9/images-12-30.jpg">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/Xx6PLCMX/images-12-31.jpg" data-large="https://i.ibb.co/Xx6PLCMX/images-12-31.jpg">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/DH7qq52D/images-38.jpg" data-large="https://i.ibb.co/DH7qq52D/images-38.jpg">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/N6Jxv2YW/images-42.jpg" data-large="https://i.ibb.co/N6Jxv2YW/images-42.jpg">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/LXM0YjWr/images-39.jpg" data-large="https://i.ibb.co/LXM0YjWr/images-39.jpg">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/4nfVhrzw/images-40.jpg" data-large="https://i.ibb.co/4nfVhrzw/images-40.jpg">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Reach out to us directly through these channels</p>
+            
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Lagos, Nigeria</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+234 805 192 9399</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>ronacatering411@gmail.com</p>
+                </div>
+                
+                <div class="whatsapp-buttons">
+                    <h4>Chat with us on WhatsApp:</h4>
+                    <a href="https://wa.me/2348051929399" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Main Business Line
+                    </a>
+                    <a href="https://wa.me/2348051929399" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Shipping Inquiries
+                    </a>
+                </div>
+                
+                <div class="social-links">
+                    <h4>Follow Us</h4>
+                    <a href="https://instagram.com/ronacatering" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://instagram.com/ronacatering" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/ronacatering" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:ronacatering411@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="https://i.ibb.co/0jzvXhj9/b7c0446f2fbd4d9d9bb078d1a551833d-removebg-preview.png" alt="Rona Events & Catering Services Logo" class="footer-logo" width="180">
+                    <p>Bringing authentic Nigerian flavors to your events and doorstep, anywhere in the world.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#shipping">Ship Food Abroad</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Event Catering</a></li>
+                        <li><a href="#services">Food Shipping</a></li>
+                        <li><a href="#services">Food Stuffs Sales</a></li>
+                        <li><a href="#services">Cooking Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>Lagos,Nigeria</li>
+                        <li><i class="fas fa-phone-alt"></i> +234 805 192 9399</li>
+                        <li><i class="fas fa-envelope"></i> ronacatering411@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Rona Events & Catering Services. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Mobile navigation toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            navToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navList.classList.toggle('active');
+                
+                if (navList.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            const navLinks = document.querySelectorAll('.nav-list a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navToggle.classList.remove('active');
+                    navList.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Order Now modal
+            const orderModal = document.getElementById('orderModal');
+            const orderNowBtn = document.getElementById('orderNowBtn');
+            const closeOrderModal = document.querySelector('.close-order-modal');
+            
+            orderNowBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                orderModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeOrderModal.addEventListener('click', function() {
+                orderModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === orderModal) {
+                    orderModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Gallery lightbox
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = document.querySelector('.lightbox-content');
+            const lightboxCaption = document.querySelector('.lightbox-caption');
+            const closeLightbox = document.querySelector('.close-lightbox');
+            
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.querySelector('img').getAttribute('data-large');
+                    const imgAlt = this.querySelector('img').getAttribute('alt');
+                    
+                    lightboxImg.setAttribute('src', imgSrc);
+                    lightboxCaption.textContent = imgAlt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            closeLightbox.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Animate on scroll
+            const animateElements = document.querySelectorAll('.section-title, .section-subtitle, .service-card, .gallery-item, .about-text, .ceo-card, .shipping-text, .shipping-image, .contact-info');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            const slideUpElements = document.querySelectorAll('.hero-content, .services-grid, .shipping-content');
+            slideUpElements.forEach(element => {
+                element.classList.add('slide-up');
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
