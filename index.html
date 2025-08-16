@@ -27,6 +27,46 @@
             --transition: all 0.3s ease;
         }
 
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --dark: #f8f9fa;
+                --light: #1a1a2e;
+                --white: #121212;
+                --gray: #b0b0b0;
+                --light-gray: #2d2d2d;
+                --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            body {
+                color: var(--dark);
+                background-color: var(--white);
+            }
+            
+            .header {
+                background-color: rgba(18, 18, 18, 0.95) !important;
+            }
+            
+            .header.scrolled {
+                background-color: rgba(18, 18, 18, 0.98) !important;
+            }
+            
+            .nav-list a {
+                color: var(--dark);
+            }
+            
+            .service-card, .ceo-card, .contact-info {
+                background: var(--light-gray);
+            }
+            
+            .section-title, .service-card h3 {
+                color: var(--dark);
+            }
+            
+            .section-subtitle, .service-card p {
+                color: var(--gray);
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -63,6 +103,14 @@
             color: var(--dark);
             text-align: center;
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title::after {
@@ -85,6 +133,14 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+        }
+
+        .section-subtitle.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .btn {
@@ -332,6 +388,14 @@
             z-index: 1;
             max-width: 800px;
             padding: 0 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .hero-content.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .hero-title {
@@ -412,6 +476,14 @@
         .about-text {
             flex: 1;
             min-width: 300px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .about-text.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .about-text p {
@@ -432,6 +504,14 @@
             align-items: center;
             padding: 30px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+        }
+
+        .ceo-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .ceo-image {
@@ -503,6 +583,14 @@
             transition: var(--transition);
             position: relative;
             padding-bottom: 60px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .service-card:hover {
@@ -519,7 +607,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.6s ease;
         }
 
         .service-card:hover .service-image img {
@@ -575,6 +663,14 @@
         .shipping-text {
             flex: 1;
             min-width: 300px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .shipping-text.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .shipping-text h2 {
@@ -612,6 +708,14 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+        }
+
+        .shipping-image.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .shipping-image img {
@@ -635,13 +739,21 @@
             box-shadow: var(--box-shadow);
             cursor: pointer;
             aspect-ratio: 1 / 1;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.6s ease;
         }
 
         .gallery-overlay {
@@ -655,7 +767,7 @@
             justify-content: center;
             align-items: center;
             opacity: 0;
-            transition: var(--transition);
+            transition: opacity 0.3s ease;
         }
 
         .gallery-overlay i {
@@ -734,6 +846,14 @@
             background: var(--light);
             padding: 40px;
             border-radius: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .contact-info.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .contact-info h3 {
@@ -877,31 +997,6 @@
 
         .footer-legal a:hover {
             text-decoration: underline;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease forwards;
-        }
-
-        .slide-up {
-            animation: slideUp 0.8s ease forwards;
         }
 
         /* Responsive Styles */
@@ -1486,33 +1581,35 @@
                 }
             });
             
-            // Animate on scroll
-            const animateElements = document.querySelectorAll('.section-title, .section-subtitle, .service-card, .gallery-item, .about-text, .ceo-card, .shipping-text, .shipping-image, .contact-info');
-            
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+            // Intersection Observer for animations
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.section-title, .section-subtitle, .hero-content, .about-text, .ceo-card, .service-card, .shipping-text, .shipping-image, .gallery-item, .contact-info');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -100px 0px'
+                });
+                
+                elements.forEach(element => {
+                    observer.observe(element);
+                });
             };
             
-            const observer = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+            // Initialize animations
+            animateOnScroll();
             
-            animateElements.forEach(element => {
-                observer.observe(element);
-            });
-            
-            const slideUpElements = document.querySelectorAll('.hero-content, .services-grid, .shipping-content');
-            slideUpElements.forEach(element => {
-                element.classList.add('slide-up');
-                observer.observe(element);
-            });
+            // Make hero content visible immediately
+            setTimeout(() => {
+                document.querySelector('.hero-content').classList.add('visible');
+            }, 100);
         });
     </script>
 </body>
-</html>
+</html>         
